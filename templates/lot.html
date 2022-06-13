@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row content" id="offer_detail_block" xmlns:left="http://www.w3.org/1999/xhtml"
+         xmlns:top="http://www.w3.org/1999/xhtml">
+
+        <div class="col-xs-12 col-sm-6 content__col content__offer__photos">
+            <div class="clb_obj" data-id="225461564473356" data-type_object="offer"></div>
+
+            <div class="fotorama--hidden"></div>
+            <div class="fotorama fotorama1655135176673" data-auto="false" data-width="100%" data-ratio="4/3"
+                 data-thumbwidth="125" data-thumbheight="93" data-thumbmargin="5" data-fit="contain" data-click="false"
+                 data-hash="true" data-keyboard="true" data-nav="thumbs" data-allowfullscreen="true" data-count_img="6">
+                <div class="fotorama__wrap fotorama__wrap--css3 fotorama__wrap--slide fotorama__wrap--toggle-arrows fotorama__wrap--no-controls"
+                     style="width: 100%; min-width: 0px; max-width: 100%;">
+                    <div class="fotorama__stage" style="width: 539px; height: 404px;">
+                        <div class="fotorama__fullscreen-icon" tabindex="0" role="button"></div>
+                        <div class="fotorama__stage__shaft fotorama__grab"
+                             style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); width: 539px; margin-left: 0px;">
+                            <div class="fotorama__stage__frame fotorama__loaded fotorama__loaded--img fotorama__active"
+                                 style="left: 0px;"><img
+                                    src={{ image }}
+                                            class="fotorama__img"
+                                    alt={{ name }}
+                                    style="width: 536.036px; height 404px; left: 1.48177px; top: 0px;"></div>
+                        </div>
+                        <div class="fotorama__arr fotorama__arr--prev fotorama__arr--disabled" tabindex="-1"
+                             role="button" disabled="disabled"></div>
+                        <div class="fotorama__arr fotorama__arr--next" tabindex="0" role="button"></div>
+                        <div class="fotorama__video-close"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 content__col content__offer__details">
+            <div class="offer__block">
+                <h1 class="title title_l offer__title" id="offer_title">{{ name }}</h1>
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div id="offer_prices_form" class="offer__block">
+                <form class="clearfix">
+                    <input type="hidden" name="item_id" value="225461564473356">
+                    <div class="offer__price">
+                        <noindex><h5 class="title title_xs offer__price__title">Текущая цена</h5></noindex>
+                        <div class="offer__price__rur title_l">
+                            <span class="price">{{ bid }}</span>&nbsp;<span class="rouble">  Руб</span></div>
+                    </div>
+
+                    <div class="offer__bid">
+                        <noindex>
+                            <h5 class="title title_xs offer__bid__title" style="cursor: pointer;"
+                                title="Введите сумму, до которой система будет торговаться за Вас">Ставка</h5>
+                            <input type="text" name="amount" id="myBidValue" value={{ bid }}
+                                    class="form__control offer__bid__control">
+                            <span class="rouble">  Руб</span></noindex>
+                    </div>
+
+                    <div class="offer__actions">
+                        <input type="button" value="Сделать ставку" data-id="225461564473356" id="bid-btn"
+                               class="btn bid-btn">
+                    </div>
+                </form>
+
+                <form class="clearfix">
+                    <input type="hidden" name="item_id" value="225461564473356">
+                    <div class="offer__price">
+                        <noindex><h5 class="title title_xs offer__price__title">Цена "купить сейчас"</h5></noindex>
+                        <div class="offer__price__rur title_l">{{ cost }}<span class="rouble">  Руб</span></div>
+                    </div>
+                    <div class="offer__actions">
+                        <a href= "/buy/{{id}}" id="buy-now-btn" class="btn buy-now-btn">Купить сейчас</a>>
+                        <input type="button" data-id="225461564473356" title="Положить в корзину" id="add-to-cart-btn"
+                               class="btn add-to-cart-btn">
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <input type="hidden" name="csrf" value="57292b7fdbdd75247e53e601290d82ca">
+
+    </div>
+
+{% endblock %}
