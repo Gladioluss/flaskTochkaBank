@@ -1,5 +1,4 @@
 class User:
-    object_name: str = 'User'
     username: str
     email: str
     password: str

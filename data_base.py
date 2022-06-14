@@ -3,9 +3,6 @@ from firebase_admin import credentials
 from firebase_admin import db
 from os import getenv
 from dotenv import load_dotenv
-import json
-
-from models import Product
 
 load_dotenv()
 FIREBASE_API_KEY = {
