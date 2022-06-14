@@ -4,8 +4,10 @@ from auth.auth import auth as auth_blueprint
 from data_base import Database
 from models import Product
 from cloudipsp import Api, Checkout
+from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
+run_with_ngrok(app)
 db = Database().connect()
 app.config['SECRET_KEY'] = '9OLWxND4o83j4K4iuopO'
 
